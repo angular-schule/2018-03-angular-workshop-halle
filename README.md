@@ -54,7 +54,7 @@ node -v
 npm -v
 > Erwartet: 5.x oder höher
 
-ng -v
+ng version
 > Erwartet: 6.0.0-beta.5
 
 ```
