@@ -1,1 +1,9 @@
 https://netbasal.com/angular-2-improve-performance-with-trackby-cc147b5104e5
+
+Proxys setzen:
+
+set HTTP_PROXY=http://example.com
+set HTTPS_PROXY=http://example.com
+ODER
+export HTTP_PROXY=http://example.com
+export HTTPS_PROXY=http://example.com
