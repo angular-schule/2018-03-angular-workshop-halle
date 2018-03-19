@@ -1,2 +1,9 @@
 {{ books }}
 
+<ng-container *ngIf="books.length > 0">
+  <br-book [book]="b" *ngFor="let b of books"></br-book>
+</ng-container>
+
+<div *ngIf="books.length === 2">
+  Es sind genau 2 Bücher vorhanden.
+</div>
