@@ -1,35 +1,34 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Customer = /** @class */ (function () {
-    function Customer(id) {
+class Customer {
+    constructor(id) {
         this.id = id;
     }
-    Customer.prototype.calculateNumber = function () {
+    calculateNumber() {
         return this.id * 10;
-    };
-    Customer.prototype.foobar = function (name) {
-        var _this = this;
+    }
+    foobar(name) {
         console.log(this.id);
         debugger;
         if (typeof name === 'number') {
             return name.toString();
         }
         console.log(name);
-        var self = this;
+        let self = this;
         function foo() {
             return self.calculateNumber();
         }
-        var bar = function () { return _this.calculateNumber(); };
-        /*const text = 'Hallo \n' +
-        'Welt\n' +
-        '!';*/
-        var city = 'Halle/Saale';
-        var text = "\n        Hallo \n        Hallo " + city + "\n        Hallo hallo\n        ";
+        const bar = () => this.calculateNumber();
+        const city = 'Halle/Saale';
+        const text = `
+        Hallo 
+        Hallo ${city}
+        Hallo hallo
+        `;
         console.log(text);
         console.log(foo());
         console.log(bar());
-    };
-    return Customer;
-}());
+    }
+}
 exports.Customer = Customer;
 //# sourceMappingURL=customer.js.map

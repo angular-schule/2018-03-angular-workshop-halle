@@ -1,9 +1,6 @@
 export class Customer {
-    id: number;
 
-    constructor(id: number) {
-        this.id = id;
-    }
+    constructor(public id: number) {}
 
     private calculateNumber(): number {
         return this.id * 10;
