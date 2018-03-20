@@ -35,5 +35,9 @@ describe('BookComponent', () => {
   it('should display the correct rating', () => {
     const ratingBox = fixture.debugElement.query(By.css('span.rating-box'));
     expect(ratingBox.nativeElement.textContent).toBe('3');
+
+    component.book = { ...component.book, rating: 5 };
+    fixture.detectChanges();
+    expect(ratingBox.nativeElement.textContent).toBe('5');
   });
 });
