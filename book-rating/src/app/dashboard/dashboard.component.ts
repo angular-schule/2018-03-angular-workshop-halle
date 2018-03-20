@@ -30,6 +30,14 @@ export class DashboardComponent implements OnInit {
     ];
   }
 
+  reorderBooks(book: Book) {
+    const cleanedList = this.books.filter(b => b.isbn !== book.isbn);
+    this.books = [...cleanedList, book]
+      .sort((a, b) => b.rating - a.rating);
+
+    // optimieren: ChangeDetectionStrategy.OnPush
+  }
+
 }
 
 

@@ -1,7 +1,10 @@
 {{ books }}
 
 <ng-container *ngIf="books.length > 0">
-  <br-book [book]="b" *ngFor="let b of books"></br-book>
+  <br-book
+    [book]="b"
+    *ngFor="let b of books"
+    (rated)="reorderBooks($event)"></br-book>
 </ng-container>
 
 <div *ngIf="books.length === 2">
