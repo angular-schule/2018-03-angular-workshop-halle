@@ -3,7 +3,7 @@
 <ng-container *ngIf="books.length > 0">
   <br-book
     [book]="b"
-    *ngFor="let b of books"
+    *ngFor="let b of books; trackBy: trackByFn"
     (rated)="reorderBooks($event)"></br-book>
 </ng-container>
 

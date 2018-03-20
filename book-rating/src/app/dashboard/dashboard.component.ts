@@ -38,6 +38,10 @@ export class DashboardComponent implements OnInit {
     // optimieren: ChangeDetectionStrategy.OnPush
   }
 
+  trackByFn(index: number, item: Book) {
+    return item.isbn;
+  }
+
 }
 
 

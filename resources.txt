@@ -1,4 +1,5 @@
 https://netbasal.com/angular-2-improve-performance-with-trackby-cc147b5104e5
+https://www.youtube.com/watch?v=ukErcJDjR_Y
 https://angular.schule/blog/2017-12-pure-immutable-operations
 
 https://www.youtube.com/watch?v=qAxG4VbWSQI
