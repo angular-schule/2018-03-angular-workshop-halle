@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 import { BookComponent } from './book.component';
 
@@ -16,10 +17,23 @@ describe('BookComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(BookComponent);
     component = fixture.componentInstance;
+
+    component.book = {
+      isbn: '00000',
+      title: 'Mein Titel',
+      description: 'Beschreibung',
+      rating: 3
+    };
+
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should display the correct rating', () => {
+    const ratingBox = fixture.debugElement.query(By.css('span.rating-box'));
+    expect(ratingBox.nativeElement.textContent).toBe('3');
   });
 });

@@ -2,7 +2,7 @@ import { BookComponent } from './book.component';
 import { BookRatingService } from '../shared/book-rating.service';
 import { Book } from '../shared/book';
 
-fdescribe('BookComponent (Simple)', () => {
+describe('BookComponent (Simple)', () => {
   let component: BookComponent;
 
   beforeEach(() => {
