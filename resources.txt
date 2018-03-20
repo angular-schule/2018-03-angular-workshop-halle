@@ -5,6 +5,8 @@ https://angular.schule/blog/2017-12-pure-immutable-operations
 https://www.youtube.com/watch?v=qAxG4VbWSQI
 https://urish.org/
 
+https://blog.angular-university.io/onpush-change-detection-how-it-works/
+
 Proxys setzen:
 
 set HTTP_PROXY=http://example.com
