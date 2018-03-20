@@ -8,6 +8,8 @@ https://urish.org/
 
 https://blog.angular-university.io/onpush-change-detection-how-it-works/
 
+https://angular.io/guide/testing
+
 Proxys setzen:
 
 set HTTP_PROXY=http://example.com

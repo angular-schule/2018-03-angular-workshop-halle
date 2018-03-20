@@ -15,7 +15,7 @@ fdescribe('BookComponent (Simple)', () => {
       rateUp: (book) => {}
     } as BookRatingService;
 
-    spyOn(component.rs, 'rateUp');
+    spyOn(component.rs, 'rateUp').and.callThrough();
 
     component.rateUp();
 
