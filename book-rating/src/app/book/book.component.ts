@@ -12,6 +12,9 @@ export class BookComponent {
 
   rs = new BookRatingService();
 
+  constructor(/* private rs: BookRatingService */) {
+  }
+
   @Input()
   book: Book;
 

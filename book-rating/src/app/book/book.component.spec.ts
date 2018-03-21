@@ -3,6 +3,7 @@ import { By } from '@angular/platform-browser';
 import { ChangeDetectionStrategy } from '@angular/core';
 
 import { BookComponent } from './book.component';
+import { BookRatingService } from '../shared/book-rating.service';
 
 describe('BookComponent', () => {
   let component: BookComponent;
@@ -10,7 +11,15 @@ describe('BookComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BookComponent ]
+      declarations: [ BookComponent ],
+      /*providers: [
+        { provide: BookRatingService, useFactory: () => {
+          return {
+            rateUp: () => {},
+            rateDown: () => {},
+          }
+        } }*/
+      ]
     })
     .overrideComponent(BookComponent, {
       set: {
