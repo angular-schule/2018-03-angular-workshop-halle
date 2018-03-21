@@ -1,10 +1,31 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import { catchError, retry } from 'rxjs/operators';
+import { of } from 'rxjs/observable/of';
+
 import { Book } from './book';
 
 @Injectable()
 export class BookStoreService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  getAll(): Observable<Book[]> {
+    return this.http
+      .get<Book[]>('http://api.angular.schule/books')
+      .pipe(
+        retry(5),
+        catchError(err => of([
+          { isbn: '', title: 'FEHLER', description: 'Das ist ein Fehler... sorry', rating: 1 }
+        ]))
+      );
+  }
+
+  create(book: Book): Observable<any> {
+    return this.http.post('http://api.angular.schule/book', book, { responseType: 'text' });
+  }
+
 
   getAllStatic(): Book[] {
     return [
