@@ -1,6 +1,9 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Book } from '../shared/book';
+import { map, filter, debounceTime, distinctUntilChanged, scan, switchMap } from 'rxjs/operators';
+import { Observable } from 'rxjs/Observable';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -13,7 +16,9 @@ export class CreateBookComponent implements OnInit {
   bookForm: FormGroup;
   @Output() bookCreate = new EventEmitter<Book>();
 
-  constructor() { }
+  isbn$: Observable<any>;
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.bookForm = new FormGroup({
@@ -26,7 +31,16 @@ export class CreateBookComponent implements OnInit {
       description: new FormControl('')
     });
 
-    this.bookForm.valueChanges.subscribe(e => console.log('valueChanges', e));
+    // this.bookForm.valueChanges.subscribe(e => console.log('valueChanges', e));
+
+    this.isbn$ = this.bookForm.valueChanges.pipe(
+      map(value => value.isbn),
+      // filter(isbn => isbn.startsWith('1')),
+      debounceTime(1000),
+      distinctUntilChanged(),
+      switchMap(isbn => this.http.get('http://api.angular.schule/book/' + isbn))
+      // scan((acc: string[], item: string) => [...acc, item], [])
+    );
   }
 
   logForm() {
