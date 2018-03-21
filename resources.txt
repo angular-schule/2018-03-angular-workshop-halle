@@ -1,14 +1,16 @@
 https://angular.io/guide/styleguide
 https://netbasal.com/angular-2-improve-performance-with-trackby-cc147b5104e5
 https://www.youtube.com/watch?v=ukErcJDjR_Y
-https://angular.schule/blog/2017-12-pure-immutable-operations
+https://angular.schule/blog/2018-03-pure-immutable-operations
 
 https://www.youtube.com/watch?v=qAxG4VbWSQI
 https://urish.org/
 
 https://blog.angular-university.io/onpush-change-detection-how-it-works/
-
 https://angular.io/guide/testing
+
+https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0
+https://github.com/UltimateAngular/ngx-errors
 
 Proxys setzen:
 
