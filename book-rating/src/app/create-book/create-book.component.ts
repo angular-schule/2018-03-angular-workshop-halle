@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Book } from '../shared/book';
 
 
 @Component({
@@ -10,6 +11,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class CreateBookComponent implements OnInit {
 
   bookForm: FormGroup;
+  @Output() bookCreate = new EventEmitter<Book>();
 
   constructor() { }
 
@@ -23,10 +25,25 @@ export class CreateBookComponent implements OnInit {
       title: new FormControl('', Validators.required),
       description: new FormControl('')
     });
+
+    this.bookForm.valueChanges.subscribe(e => console.log('valueChanges', e));
   }
 
   logForm() {
     console.log(this.bookForm);
+  }
+
+  submitForm() {
+    const value = this.bookForm.value;
+
+    // Optimierung: In Factory auslagern, z.B. formToBook()
+    const book: Book = {
+      ...value,
+      rating: 1
+    };
+
+    this.bookCreate.emit(book);
+    this.bookForm.reset();
   }
 
 }
