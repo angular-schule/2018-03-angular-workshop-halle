@@ -4,6 +4,12 @@
 
 <hr>
 
+**⚠️ Achtung: Dieses Repo gehört zur ersten Schulung im März 2018.<br>
+Falls Du auf der Suche nach der Schulung im April bist:<br>
+https://github.com/angular-schule/2018-04-angular-workshop-halle**
+
+<hr>
+
 **Schön, dass Du dabei bist!**  
 Merke dir schon einmal dieses Repository.  
 Hier wird während des Workshops stets der Quelltext unserer Beispielanwendung verfügbar sein.
